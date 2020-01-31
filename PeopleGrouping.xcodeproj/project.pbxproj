@@ -253,7 +253,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BD8A384D23D4281E003EC183 /* Build configuration list for PBXProject "Blacklister - Categorize People" */;
+			buildConfigurationList = BD8A384D23D4281E003EC183 /* Build configuration list for PBXProject "PeopleGrouping" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -545,7 +545,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BD8A384D23D4281E003EC183 /* Build configuration list for PBXProject "Blacklister - Categorize People" */ = {
+		BD8A384D23D4281E003EC183 /* Build configuration list for PBXProject "PeopleGrouping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD8A386F23D42823003EC183 /* Debug */,

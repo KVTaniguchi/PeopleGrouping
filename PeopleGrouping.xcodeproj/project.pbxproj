@@ -60,6 +60,7 @@
 		BD8A388423D42E4D003EC183 /* PersonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRow.swift; sourceTree = "<group>"; };
 		BD8A388623D433BB003EC183 /* PeopleGrouping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleGrouping.entitlements; sourceTree = "<group>"; };
 		BD8A388823D433BF003EC183 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BDA295BB23E4C5B10040D4BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 				BD8A386023D42822003EC183 /* LaunchScreen.storyboard */,
 				BD8A386323D42822003EC183 /* Info.plist */,
 				BD8A385D23D42822003EC183 /* Preview Content */,
+				BDA295BB23E4C5B10040D4BB /* README.md */,
 			);
 			path = PeopleGrouping;
 			sourceTree = "<group>";

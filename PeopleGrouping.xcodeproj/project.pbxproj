@@ -16,7 +16,7 @@
 		BD8A385C23D42822003EC183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8A385B23D42822003EC183 /* Assets.xcassets */; };
 		BD8A385F23D42822003EC183 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8A385E23D42822003EC183 /* Preview Assets.xcassets */; };
 		BD8A386223D42822003EC183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8A386023D42822003EC183 /* LaunchScreen.storyboard */; };
-		BD8A386D23D42823003EC183 /* Blacklister___Categorize_PeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A386C23D42823003EC183 /* Blacklister___Categorize_PeopleTests.swift */; };
+		BD8A386D23D42823003EC183 /* PeopleGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A386C23D42823003EC183 /* PeopleGroupingTests.swift */; };
 		BD8A387A23D4285F003EC183 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A387923D4285F003EC183 /* Person.swift */; };
 		BD8A387C23D4289B003EC183 /* PersonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A387B23D4289B003EC183 /* PersonCategory.swift */; };
 		BD8A387F23D42B8A003EC183 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A387E23D42B8A003EC183 /* PeopleList.swift */; };
@@ -24,6 +24,7 @@
 		BD8A388323D42DF5003EC183 /* CloudKitManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A388223D42DF5003EC183 /* CloudKitManagement.swift */; };
 		BD8A388523D42E4D003EC183 /* PersonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A388423D42E4D003EC183 /* PersonRow.swift */; };
 		BD8A388923D433BF003EC183 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8A388823D433BF003EC183 /* CloudKit.framework */; };
+		BDA295BA23E4C0FB0040D4BB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD8A386323D42822003EC183 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 		BD81463423DD67540050DCF7 /* PeopleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetail.swift; sourceTree = "<group>"; };
 		BD81463723DD72CD0050DCF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BD81463A23DD797F0050DCF7 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
-		BD8A385223D4281E003EC183 /* Blacklister - Categorize People.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blacklister - Categorize People.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8A385223D4281E003EC183 /* PeopleGrouping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleGrouping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A385523D4281E003EC183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD8A385723D4281E003EC183 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD8A385923D4281E003EC183 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,8 +49,8 @@
 		BD8A385E23D42822003EC183 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BD8A386123D42822003EC183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD8A386323D42822003EC183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD8A386823D42822003EC183 /* Blacklister - Categorize PeopleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blacklister - Categorize PeopleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD8A386C23D42823003EC183 /* Blacklister___Categorize_PeopleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blacklister___Categorize_PeopleTests.swift"; sourceTree = "<group>"; };
+		BD8A386823D42822003EC183 /* PeopleGroupingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleGroupingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8A386C23D42823003EC183 /* PeopleGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleGroupingTests.swift; sourceTree = "<group>"; };
 		BD8A386E23D42823003EC183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8A387923D4285F003EC183 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BD8A387B23D4289B003EC183 /* PersonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCategory.swift; sourceTree = "<group>"; };
@@ -57,7 +58,7 @@
 		BD8A388023D42BA2003EC183 /* PeopleResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResource.swift; sourceTree = "<group>"; };
 		BD8A388223D42DF5003EC183 /* CloudKitManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagement.swift; sourceTree = "<group>"; };
 		BD8A388423D42E4D003EC183 /* PersonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRow.swift; sourceTree = "<group>"; };
-		BD8A388623D433BB003EC183 /* Blacklister - Categorize People.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Blacklister - Categorize People.entitlements"; sourceTree = "<group>"; };
+		BD8A388623D433BB003EC183 /* PeopleGrouping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleGrouping.entitlements; sourceTree = "<group>"; };
 		BD8A388823D433BF003EC183 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -107,8 +108,8 @@
 		BD8A384923D4281E003EC183 = {
 			isa = PBXGroup;
 			children = (
-				BD8A385423D4281E003EC183 /* Blacklister - Categorize People */,
-				BD8A386B23D42823003EC183 /* Blacklister - Categorize PeopleTests */,
+				BD8A385423D4281E003EC183 /* PeopleGrouping */,
+				BD8A386B23D42823003EC183 /* PeopleGroupingTests */,
 				BD8A385323D4281E003EC183 /* Products */,
 				BD8A388723D433BF003EC183 /* Frameworks */,
 			);
@@ -117,19 +118,19 @@
 		BD8A385323D4281E003EC183 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BD8A385223D4281E003EC183 /* Blacklister - Categorize People.app */,
-				BD8A386823D42822003EC183 /* Blacklister - Categorize PeopleTests.xctest */,
+				BD8A385223D4281E003EC183 /* PeopleGrouping.app */,
+				BD8A386823D42822003EC183 /* PeopleGroupingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BD8A385423D4281E003EC183 /* Blacklister - Categorize People */ = {
+		BD8A385423D4281E003EC183 /* PeopleGrouping */ = {
 			isa = PBXGroup;
 			children = (
 				BD81463923DD79770050DCF7 /* Helpers */,
 				BD81463623DD72C30050DCF7 /* Settings */,
 				BD81463323DD67390050DCF7 /* PeopleDetail */,
-				BD8A388623D433BB003EC183 /* Blacklister - Categorize People.entitlements */,
+				BD8A388623D433BB003EC183 /* PeopleGrouping.entitlements */,
 				BD8A387D23D42B7C003EC183 /* PeopleList */,
 				BD8A387823D42848003EC183 /* People */,
 				BD8A387723D42837003EC183 /* TopUI Delegates */,
@@ -138,7 +139,7 @@
 				BD8A386323D42822003EC183 /* Info.plist */,
 				BD8A385D23D42822003EC183 /* Preview Content */,
 			);
-			path = "Blacklister - Categorize People";
+			path = PeopleGrouping;
 			sourceTree = "<group>";
 		};
 		BD8A385D23D42822003EC183 /* Preview Content */ = {
@@ -149,13 +150,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BD8A386B23D42823003EC183 /* Blacklister - Categorize PeopleTests */ = {
+		BD8A386B23D42823003EC183 /* PeopleGroupingTests */ = {
 			isa = PBXGroup;
 			children = (
-				BD8A386C23D42823003EC183 /* Blacklister___Categorize_PeopleTests.swift */,
+				BD8A386C23D42823003EC183 /* PeopleGroupingTests.swift */,
 				BD8A386E23D42823003EC183 /* Info.plist */,
 			);
-			path = "Blacklister - Categorize PeopleTests";
+			path = PeopleGroupingTests;
 			sourceTree = "<group>";
 		};
 		BD8A387723D42837003EC183 /* TopUI Delegates */ = {
@@ -199,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BD8A385123D4281E003EC183 /* Blacklister - Categorize People */ = {
+		BD8A385123D4281E003EC183 /* PeopleGrouping */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD8A387123D42823003EC183 /* Build configuration list for PBXNativeTarget "Blacklister - Categorize People" */;
+			buildConfigurationList = BD8A387123D42823003EC183 /* Build configuration list for PBXNativeTarget "PeopleGrouping" */;
 			buildPhases = (
 				BD8A384E23D4281E003EC183 /* Sources */,
 				BD8A384F23D4281E003EC183 /* Frameworks */,
@@ -211,14 +212,14 @@
 			);
 			dependencies = (
 			);
-			name = "Blacklister - Categorize People";
+			name = PeopleGrouping;
 			productName = "Blacklister - Categorize People";
-			productReference = BD8A385223D4281E003EC183 /* Blacklister - Categorize People.app */;
+			productReference = BD8A385223D4281E003EC183 /* PeopleGrouping.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BD8A386723D42822003EC183 /* Blacklister - Categorize PeopleTests */ = {
+		BD8A386723D42822003EC183 /* PeopleGroupingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD8A387423D42823003EC183 /* Build configuration list for PBXNativeTarget "Blacklister - Categorize PeopleTests" */;
+			buildConfigurationList = BD8A387423D42823003EC183 /* Build configuration list for PBXNativeTarget "PeopleGroupingTests" */;
 			buildPhases = (
 				BD8A386423D42822003EC183 /* Sources */,
 				BD8A386523D42822003EC183 /* Frameworks */,
@@ -229,9 +230,9 @@
 			dependencies = (
 				BD8A386A23D42823003EC183 /* PBXTargetDependency */,
 			);
-			name = "Blacklister - Categorize PeopleTests";
+			name = PeopleGroupingTests;
 			productName = "Blacklister - Categorize PeopleTests";
-			productReference = BD8A386823D42822003EC183 /* Blacklister - Categorize PeopleTests.xctest */;
+			productReference = BD8A386823D42822003EC183 /* PeopleGroupingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -266,8 +267,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BD8A385123D4281E003EC183 /* Blacklister - Categorize People */,
-				BD8A386723D42822003EC183 /* Blacklister - Categorize PeopleTests */,
+				BD8A385123D4281E003EC183 /* PeopleGrouping */,
+				BD8A386723D42822003EC183 /* PeopleGroupingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA295BA23E4C0FB0040D4BB /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD8A386D23D42823003EC183 /* Blacklister___Categorize_PeopleTests.swift in Sources */,
+				BD8A386D23D42823003EC183 /* PeopleGroupingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +327,7 @@
 /* Begin PBXTargetDependency section */
 		BD8A386A23D42823003EC183 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BD8A385123D4281E003EC183 /* Blacklister - Categorize People */;
+			target = BD8A385123D4281E003EC183 /* PeopleGrouping */;
 			targetProxy = BD8A386923D42823003EC183 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -460,17 +462,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Blacklister - Categorize People/Blacklister - Categorize People.entitlements";
+				CODE_SIGN_ENTITLEMENTS = PeopleGrouping/PeopleGrouping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Blacklister - Categorize People/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PeopleGrouping/Preview Content\"";
 				DEVELOPMENT_TEAM = 3B3FT42G96;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Blacklister - Categorize People/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/PeopleGrouping/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Taniguchi.Blacklister;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Taniguchi.PeopleGrouping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,17 +483,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Blacklister - Categorize People/Blacklister - Categorize People.entitlements";
+				CODE_SIGN_ENTITLEMENTS = PeopleGrouping/PeopleGrouping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Blacklister - Categorize People/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PeopleGrouping/Preview Content\"";
 				DEVELOPMENT_TEAM = 3B3FT42G96;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Blacklister - Categorize People/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/PeopleGrouping/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Taniguchi.Blacklister;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Taniguchi.PeopleGrouping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,18 +507,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3B3FT42G96;
-				INFOPLIST_FILE = "Blacklister - Categorize PeopleTests/Info.plist";
+				INFOPLIST_FILE = PeopleGroupingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Taniguchi.Blacklister---Categorize-PeopleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Taniguchi.PeopleGrouping-PeopleGroupingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blacklister - Categorize People.app/Blacklister - Categorize People";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PeopleGrouping.app/PeopleGrouping";
 			};
 			name = Debug;
 		};
@@ -527,18 +529,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3B3FT42G96;
-				INFOPLIST_FILE = "Blacklister - Categorize PeopleTests/Info.plist";
+				INFOPLIST_FILE = PeopleGroupingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Taniguchi.Blacklister---Categorize-PeopleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Taniguchi.PeopleGrouping-PeopleGroupingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blacklister - Categorize People.app/Blacklister - Categorize People";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PeopleGrouping.app/PeopleGrouping";
 			};
 			name = Release;
 		};
@@ -554,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD8A387123D42823003EC183 /* Build configuration list for PBXNativeTarget "Blacklister - Categorize People" */ = {
+		BD8A387123D42823003EC183 /* Build configuration list for PBXNativeTarget "PeopleGrouping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD8A387223D42823003EC183 /* Debug */,
@@ -563,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD8A387423D42823003EC183 /* Build configuration list for PBXNativeTarget "Blacklister - Categorize PeopleTests" */ = {
+		BD8A387423D42823003EC183 /* Build configuration list for PBXNativeTarget "PeopleGroupingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD8A387523D42823003EC183 /* Debug */,

@@ -47,4 +47,8 @@ final class PeopleResource: ObservableObject {
             self?.itemsHashed = dict
         }
     }
+    
+    func people(forCategory category: PersonCategory) -> [Person] {
+        itemsHashed.values.filter { $0.category == category }.sorted(by: { $0.ranking > $1.ranking })
+    }
 }

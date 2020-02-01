@@ -53,6 +53,11 @@ struct PeopleDetail: View {
                         TextField("Middle Name", text: $modifiable.middleName, onEditingChanged: { didChange in
                             self.shouldDisableSave = didChange
                         })
+                        Picker(selection: $modifiable.ranking, label: Text(modifiable.rankingString)) {
+                            ForEach((1..<11).reversed(), id: \.self) { int in
+                                Text("\(int)")
+                            }
+                        }
                         TextField("Location", text: $modifiable.location, onEditingChanged: { didChange in
                             self.shouldDisableSave = didChange
                         })

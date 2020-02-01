@@ -27,6 +27,15 @@ struct PersonScratchModel: Equatable, Identifiable {
     var possibleAssociates: [Person] = []
     var associateIds: [String] = []
     var shortDescription: String = ""
+    var ranking: Int = 0
+    
+    var rankingString: String {
+        if ranking == 0 {
+            return "No rank"
+        } else {
+            return "Rank: \(ranking)"
+        }
+    }
     
     init() {
         self.identifier = UUID().uuidString
@@ -43,6 +52,7 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.possibleAssociates = []
         self.associateIds = []
         self.shortDescription = ""
+        self.ranking = 0
     }
     
     init(existingPerson: Person) {
@@ -60,6 +70,7 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.possibleAssociates = existingPerson.possibleAssociates ?? []
         self.associateIds = existingPerson.associateIds ?? []
         self.shortDescription = existingPerson.shortDescription ?? ""
+        self.ranking = existingPerson.ranking
     }
 }
 
@@ -82,6 +93,7 @@ struct Person: Equatable, Identifiable {
     var possibleAssociates: [Person]?
     let associateIds: [String]?
     let shortDescription: String?
+    let ranking: Int
     
     init(existingPerson: Person) {
         self.identifier = existingPerson.identifier
@@ -98,6 +110,7 @@ struct Person: Equatable, Identifiable {
         self.possibleAssociates = existingPerson.possibleAssociates
         self.associateIds = existingPerson.associateIds
         self.shortDescription = existingPerson.shortDescription
+        self.ranking = existingPerson.ranking
     }
     
     
@@ -116,6 +129,7 @@ struct Person: Equatable, Identifiable {
         self.possibleAssociates = scratchModel.possibleAssociates
         self.associateIds = scratchModel.associateIds
         self.shortDescription = scratchModel.shortDescription
+        self.ranking = scratchModel.ranking
     }
     
     init(identifier: String,
@@ -131,7 +145,8 @@ struct Person: Equatable, Identifiable {
     category: PersonCategory,
     possibleAssociates: [Person]? = nil,
     associateIds: [String]? = nil,
-    shortDescription: String? = nil) {
+    shortDescription: String? = nil,
+    ranking: Int = 0) {
         self.identifier = identifier
         self.firstName = firstName
         self.lastName = lastName
@@ -146,6 +161,7 @@ struct Person: Equatable, Identifiable {
         self.possibleAssociates = possibleAssociates
         self.associateIds = associateIds
         self.shortDescription = shortDescription
+        self.ranking = ranking
     }
     
     private init(newIdentifier: String) {
@@ -163,6 +179,7 @@ struct Person: Equatable, Identifiable {
         self.possibleAssociates = nil
         self.associateIds = nil
         self.shortDescription = nil
+        self.ranking = 0
     }
     
     static func newPerson() -> Person {
@@ -191,4 +208,5 @@ extension Person {
     static let category = "categoryKey"
     static let associates = "associatesKey"
     static let shortDescription = "shortDescriptionKey"
+    static let ranking = "rankingKey"
 }

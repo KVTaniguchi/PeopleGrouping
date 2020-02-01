@@ -18,7 +18,7 @@ struct PeopleList: View {
     
     var body: some View {
         List {
-            ForEach(resource.itemsHashed.values.filter { $0.category == self.category }) { person in
+            ForEach(resource.people(forCategory: self.category)) { person in
                 NavigationLink(destination: PeopleDetail(person: person, category: self.category)) {
                     PersonRow(personId: person.identifier)
                 }

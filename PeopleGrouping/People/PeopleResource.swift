@@ -40,10 +40,7 @@ final class PeopleResource: ObservableObject {
         CloudKitManager.shared.loadSavedConsumables { [weak self] (people, error) in
             var dict: [String: Person] = [:]
             
-            print(people)
-            
             people.forEach {
-                print("FETCHED \($0.firstName) \($0.lastName) \($0.category)")
                 dict[$0.identifier] = $0
             }
             

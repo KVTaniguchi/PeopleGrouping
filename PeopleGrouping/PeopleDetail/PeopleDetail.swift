@@ -74,10 +74,10 @@ struct PeopleDetail: View {
                         // save section
                         Section {
                             Button("Save") {
-//                                guard FileManager.default.ubiquityIdentityToken != nil else {
-//                                    self.showingAlert = true
-//                                    return
-//                                }
+                                guard FileManager.default.ubiquityIdentityToken != nil else {
+                                    self.showingAlert = true
+                                    return
+                                }
                                 
                                 self.isSaving = true
                                 

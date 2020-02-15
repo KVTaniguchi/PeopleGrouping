@@ -41,10 +41,6 @@ struct PeopleDetail: View {
                         TextField("Last Name", text: $modifiable.lastName, onEditingChanged: { didChange in
                             self.shouldDisableSave = didChange
                         })
-//                        Picker("Friend or Enemy", selection: $updatedCategory) {
-//                            Text("Enemy").tag(0)
-//                            Text("Friend").tag(1)
-//                        }.pickerStyle(SegmentedPickerStyle())
                         TextField("Middle Name", text: $modifiable.middleName, onEditingChanged: { didChange in
                             self.shouldDisableSave = didChange
                         })

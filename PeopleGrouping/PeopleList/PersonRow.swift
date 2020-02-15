@@ -21,14 +21,21 @@ struct PersonRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             HStack {
-                Text(resource.itemsHashed[self.id]?.fullName ?? "no name").fontWeight(.bold)
+                Text(resource.itemsHashed[self.id]?.fullName ?? "no name")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(resource.itemsHashed[self.id]?.shortDescription ?? "").foregroundColor(.secondary)
+                Text(resource.itemsHashed[self.id]?.shortDescription ?? "")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
             HStack {
-                Text(resource.itemsHashed[self.id]?.location ?? "").foregroundColor(.secondary)
+                Text(resource.itemsHashed[self.id]?.location ?? "")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 Spacer()
-                Text(resource.itemsHashed[self.id]?.companyName ?? "").foregroundColor(.secondary)
+                Text(resource.itemsHashed[self.id]?.companyName ?? "")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
         }
     }

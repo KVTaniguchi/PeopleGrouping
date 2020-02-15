@@ -29,15 +29,15 @@ struct ContentView: View {
             TabView(selection: $activeTab) {
                 PeopleList()
                 .tabItem {
-                    Image(systemName: "hand.thumbsdown")
+                    Image(systemName: "person.3.fill")
                     Text("people")
                 }.tag(0)
-                PeopleList()
+                PlaceList()
                 .tabItem {
-                    Image(systemName: "hand.thumbsup")
+                    Image(systemName: "perspective")
                     Text("places")
                 }.tag(1)
-                PeopleList()
+                AllList()
                 .tabItem {
                     Image(systemName: "smallcircle.fill.circle")
                     Text("all")

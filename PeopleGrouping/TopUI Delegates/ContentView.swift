@@ -16,38 +16,28 @@ struct ContentView: View {
     
     private var activeTabTitle: String {
         if activeTab == 0 {
-            return "enemies"
+            return "people"
         } else if activeTab == 1 {
-            return "friends"
+            return "places"
         } else {
             return "all"
-        }
-    }
-    
-    private var selectedCategory: PersonCategory {
-        if activeTab == 0 {
-            return .enemy
-        } else if activeTab == 1 {
-            return .friend
-        } else {
-            return .all
         }
     }
     
     var body: some View {
         NavigationView {
             TabView(selection: $activeTab) {
-                PeopleList(category: .enemy)
+                PeopleList()
                 .tabItem {
                     Image(systemName: "hand.thumbsdown")
-                    Text("enemies")
+                    Text("people")
                 }.tag(0)
-                PeopleList(category: .friend)
+                PeopleList()
                 .tabItem {
                     Image(systemName: "hand.thumbsup")
-                    Text("friends")
+                    Text("places")
                 }.tag(1)
-                PeopleList(category: .all)
+                PeopleList()
                 .tabItem {
                     Image(systemName: "smallcircle.fill.circle")
                     Text("all")
@@ -72,15 +62,15 @@ struct ContentView: View {
                 }.sheet(isPresented: self.$isShowingingNewPerson, onDismiss: {
                     self.isShowingingNewPerson = false
                 }) {
-                    PeopleDetail(category: self.selectedCategory).environmentObject(self.resource)
+                    PeopleDetail().environmentObject(self.resource)
                 }
             )
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

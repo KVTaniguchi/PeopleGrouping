@@ -41,8 +41,8 @@ struct PersonRow: View {
     }
 }
 
-struct PersonRow_Previews: PreviewProvider {
-    static var previews: some View {
-        PersonRow(personId: "")
-    }
-}
+//struct PersonRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PersonRow(personId: "")
+//    }
+//}

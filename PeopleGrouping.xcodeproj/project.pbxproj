@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD49726C23F82D220045803D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49726B23F82D220045803D /* Place.swift */; };
 		BD81463523DD67540050DCF7 /* PeopleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81463423DD67540050DCF7 /* PeopleDetail.swift */; };
 		BD81463823DD72CD0050DCF7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81463723DD72CD0050DCF7 /* SettingsView.swift */; };
 		BD81463B23DD797F0050DCF7 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81463A23DD797F0050DCF7 /* KeyboardHelper.swift */; };
@@ -18,7 +19,6 @@
 		BD8A386223D42822003EC183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8A386023D42822003EC183 /* LaunchScreen.storyboard */; };
 		BD8A386D23D42823003EC183 /* PeopleGroupingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A386C23D42823003EC183 /* PeopleGroupingTests.swift */; };
 		BD8A387A23D4285F003EC183 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A387923D4285F003EC183 /* Person.swift */; };
-		BD8A387C23D4289B003EC183 /* PersonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A387B23D4289B003EC183 /* PersonCategory.swift */; };
 		BD8A387F23D42B8A003EC183 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A387E23D42B8A003EC183 /* PeopleList.swift */; };
 		BD8A388123D42BA2003EC183 /* PeopleResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A388023D42BA2003EC183 /* PeopleResource.swift */; };
 		BD8A388323D42DF5003EC183 /* CloudKitManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A388223D42DF5003EC183 /* CloudKitManagement.swift */; };
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD49726B23F82D220045803D /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BD81463423DD67540050DCF7 /* PeopleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetail.swift; sourceTree = "<group>"; };
 		BD81463723DD72CD0050DCF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BD81463A23DD797F0050DCF7 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		BD8A386C23D42823003EC183 /* PeopleGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleGroupingTests.swift; sourceTree = "<group>"; };
 		BD8A386E23D42823003EC183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD8A387923D4285F003EC183 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		BD8A387B23D4289B003EC183 /* PersonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCategory.swift; sourceTree = "<group>"; };
 		BD8A387E23D42B8A003EC183 /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
 		BD8A388023D42BA2003EC183 /* PeopleResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResource.swift; sourceTree = "<group>"; };
 		BD8A388223D42DF5003EC183 /* CloudKitManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagement.swift; sourceTree = "<group>"; };
@@ -84,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD49726A23F82D100045803D /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				BD49726B23F82D220045803D /* Place.swift */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
 		BD81463323DD67390050DCF7 /* PeopleDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +138,7 @@
 		BD8A385423D4281E003EC183 /* PeopleGrouping */ = {
 			isa = PBXGroup;
 			children = (
+				BD49726A23F82D100045803D /* Places */,
 				BDA295BC23E533E50040D4BB /* Sorting */,
 				BD81463923DD79770050DCF7 /* Helpers */,
 				BD81463623DD72C30050DCF7 /* Settings */,
@@ -178,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				BD8A387923D4285F003EC183 /* Person.swift */,
-				BD8A387B23D4289B003EC183 /* PersonCategory.swift */,
 				BD8A388023D42BA2003EC183 /* PeopleResource.swift */,
 				BD8A388223D42DF5003EC183 /* CloudKitManagement.swift */,
 			);
@@ -313,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8A387F23D42B8A003EC183 /* PeopleList.swift in Sources */,
+				BD49726C23F82D220045803D /* Place.swift in Sources */,
 				BD81463B23DD797F0050DCF7 /* KeyboardHelper.swift in Sources */,
 				BD8A388523D42E4D003EC183 /* PersonRow.swift in Sources */,
 				BD8A385623D4281E003EC183 /* AppDelegate.swift in Sources */,
@@ -320,7 +329,6 @@
 				BD8A385823D4281E003EC183 /* SceneDelegate.swift in Sources */,
 				BD8A388123D42BA2003EC183 /* PeopleResource.swift in Sources */,
 				BD8A387A23D4285F003EC183 /* Person.swift in Sources */,
-				BD8A387C23D4289B003EC183 /* PersonCategory.swift in Sources */,
 				BD8A385A23D4281E003EC183 /* ContentView.swift in Sources */,
 				BD8A388323D42DF5003EC183 /* CloudKitManagement.swift in Sources */,
 				BD81463523DD67540050DCF7 /* PeopleDetail.swift in Sources */,

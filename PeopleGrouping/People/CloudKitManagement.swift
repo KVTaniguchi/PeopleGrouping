@@ -107,7 +107,6 @@ final class CloudKitManager {
             ckRecord[Person.location] = person.location
             ckRecord[Person.email] = person.email
             ckRecord[Person.notes] = person.notes
-            ckRecord[Person.category] = person.category.rawValue
             ckRecord[Person.phone] = person.phoneNumber
             ckRecord[Person.occupation] = person.occupation
             ckRecord[Person.shortDescription] = person.shortDescription
@@ -138,11 +137,6 @@ final class CloudKitManager {
             let shortDescription = record[Person.shortDescription] as? String
             let ranking = record[Person.ranking] as? Int ?? 0
             
-            var category: PersonCategory = .all
-            if let categoryRaw = record[Person.category] as? String, let c = PersonCategory(rawValue: categoryRaw) {
-                category = c
-            }
-            
             let associatedIds = record[Person.associates] as? [String]
             
             return Person(identifier: identifier,
@@ -155,7 +149,6 @@ final class CloudKitManager {
                           location: location,
                           companyName: company,
                           occupation: occupation,
-                          category: category,
                           possibleAssociates: [],
                           associateIds: associatedIds,
                           shortDescription: shortDescription,

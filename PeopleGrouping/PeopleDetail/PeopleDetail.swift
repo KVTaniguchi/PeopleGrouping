@@ -17,20 +17,15 @@ struct PeopleDetail: View {
     @State private var isSaving = false
     @State private var shouldDisableSave: Bool = false
     @State private var modifiable: PersonScratchModel
-    @State private var updatedCategory: Int
     private var isNewPerson: Bool = false
     
-    let category: PersonCategory
-    
-    init(person: Person? = nil, category: PersonCategory) {
+    init(person: Person? = nil) {
         if let person = person {
             _modifiable = State(initialValue: PersonScratchModel(existingPerson: person))
         } else {
             isNewPerson = true
             _modifiable = State(initialValue: PersonScratchModel())
         }
-        self.category = category
-        _updatedCategory = State(initialValue: category == .enemy ? 0 : 1)
     }
     
     var body: some View {
@@ -46,10 +41,10 @@ struct PeopleDetail: View {
                         TextField("Last Name", text: $modifiable.lastName, onEditingChanged: { didChange in
                             self.shouldDisableSave = didChange
                         })
-                        Picker("Friend or Enemy", selection: $updatedCategory) {
-                            Text("Enemy").tag(0)
-                            Text("Friend").tag(1)
-                        }.pickerStyle(SegmentedPickerStyle())
+//                        Picker("Friend or Enemy", selection: $updatedCategory) {
+//                            Text("Enemy").tag(0)
+//                            Text("Friend").tag(1)
+//                        }.pickerStyle(SegmentedPickerStyle())
                         TextField("Middle Name", text: $modifiable.middleName, onEditingChanged: { didChange in
                             self.shouldDisableSave = didChange
                         })
@@ -80,12 +75,6 @@ struct PeopleDetail: View {
                                 }
                                 
                                 self.isSaving = true
-                                
-                                if self.updatedCategory == 0 {
-                                    self.modifiable.category = .enemy
-                                } else {
-                                    self.modifiable.category = .friend
-                                }
                                 
                                 let updatedPerson = Person(scratchModel: self.modifiable)
                                 if self.isNewPerson {
@@ -127,7 +116,7 @@ struct PeopleDetail: View {
                 }
                 .modifier(KeyboardHeightModifier())
             }
-        }.navigationBarTitle(self.category.rawValue)
+        }.navigationBarTitle("People")
     }
     
     private func updateAndDismiss(person: Person) {
@@ -138,8 +127,8 @@ struct PeopleDetail: View {
     }
 }
 
-struct PeopleDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        PeopleDetail(category: .all)
-    }
-}
+//struct PeopleDetail_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PeopleDetail(category: .all)
+//    }
+//}

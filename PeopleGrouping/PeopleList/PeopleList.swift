@@ -10,16 +10,11 @@ import SwiftUI
 
 struct PeopleList: View {
     @EnvironmentObject var resource: PeopleResource
-    let category: PersonCategory
-    
-    init(category: PersonCategory) {
-        self.category = category
-    }
     
     var body: some View {
         List {
-            ForEach(resource.people(forCategory: self.category)) { person in
-                NavigationLink(destination: PeopleDetail(person: person, category: self.category)) {
+            ForEach(resource.people) { person in
+                NavigationLink(destination: PeopleDetail(person: person)) {
                     PersonRow(personId: person.identifier)
                 }
             }
@@ -27,8 +22,8 @@ struct PeopleList: View {
     }
 }
 
-struct PeopleList_Previews: PreviewProvider {
-    static var previews: some View {
-        PeopleList(category: .all)
-    }
-}
+//struct PeopleList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PeopleList()
+//    }
+//}

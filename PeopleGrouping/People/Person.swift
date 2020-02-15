@@ -23,7 +23,6 @@ struct PersonScratchModel: Equatable, Identifiable {
     var location: String = ""
     var companyName: String = ""
     var occupation: String = ""
-    var category: PersonCategory = .all
     var possibleAssociates: [Person] = []
     var associateIds: [String] = []
     var shortDescription: String = ""
@@ -48,7 +47,6 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.location = ""
         self.companyName = ""
         self.occupation = ""
-        self.category = .all
         self.possibleAssociates = []
         self.associateIds = []
         self.shortDescription = ""
@@ -66,7 +64,6 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.location = existingPerson.location ?? ""
         self.companyName = existingPerson.companyName ?? ""
         self.occupation = existingPerson.occupation ?? ""
-        self.category = existingPerson.category
         self.possibleAssociates = existingPerson.possibleAssociates ?? []
         self.associateIds = existingPerson.associateIds ?? []
         self.shortDescription = existingPerson.shortDescription ?? ""
@@ -89,7 +86,6 @@ struct Person: Equatable, Identifiable {
     let location: String?
     let companyName: String?
     let occupation: String?
-    let category: PersonCategory
     var possibleAssociates: [Person]?
     let associateIds: [String]?
     let shortDescription: String?
@@ -106,7 +102,6 @@ struct Person: Equatable, Identifiable {
         self.location = existingPerson.location
         self.companyName = existingPerson.companyName
         self.occupation = existingPerson.occupation
-        self.category = existingPerson.category
         self.possibleAssociates = existingPerson.possibleAssociates
         self.associateIds = existingPerson.associateIds
         self.shortDescription = existingPerson.shortDescription
@@ -125,7 +120,6 @@ struct Person: Equatable, Identifiable {
         self.location = scratchModel.location
         self.companyName = scratchModel.companyName
         self.occupation = scratchModel.occupation
-        self.category = scratchModel.category
         self.possibleAssociates = scratchModel.possibleAssociates
         self.associateIds = scratchModel.associateIds
         self.shortDescription = scratchModel.shortDescription
@@ -142,7 +136,6 @@ struct Person: Equatable, Identifiable {
     location: String? = nil,
     companyName: String? = nil,
     occupation: String? = nil,
-    category: PersonCategory,
     possibleAssociates: [Person]? = nil,
     associateIds: [String]? = nil,
     shortDescription: String? = nil,
@@ -157,7 +150,6 @@ struct Person: Equatable, Identifiable {
         self.location = location
         self.companyName = companyName
         self.occupation = occupation
-        self.category = category
         self.possibleAssociates = possibleAssociates
         self.associateIds = associateIds
         self.shortDescription = shortDescription
@@ -175,7 +167,6 @@ struct Person: Equatable, Identifiable {
         self.location = nil
         self.companyName = nil
         self.occupation = nil
-        self.category = .all
         self.possibleAssociates = nil
         self.associateIds = nil
         self.shortDescription = nil
@@ -205,7 +196,6 @@ extension Person {
     static let location = "locationKey"
     static let company = "companyKey"
     static let occupation = "jobKey"
-    static let category = "categoryKey"
     static let associates = "associatesKey"
     static let shortDescription = "shortDescriptionKey"
     static let ranking = "rankingKey"

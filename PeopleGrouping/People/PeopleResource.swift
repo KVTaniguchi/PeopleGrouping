@@ -20,14 +20,6 @@ final class PeopleResource: ObservableObject {
         }
     }
     
-    var friends: [Person] {
-        itemsHashed.values.filter { $0.category == .friend }
-    }
-    
-    var enemies: [Person] {
-        itemsHashed.values.filter { $0.category == .enemy }
-    }
-    
     var all: [Person] {
         itemsHashed.values.map { $0 }
     }
@@ -48,7 +40,7 @@ final class PeopleResource: ObservableObject {
         }
     }
     
-    func people(forCategory category: PersonCategory) -> [Person] {
-        itemsHashed.values.filter { $0.category == category }.sorted(by: { $0.ranking > $1.ranking })
+    var people: [Person] {
+        itemsHashed.values.sorted(by: { $0.ranking > $1.ranking })
     }
 }

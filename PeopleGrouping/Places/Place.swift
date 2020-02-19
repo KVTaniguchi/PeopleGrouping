@@ -16,7 +16,6 @@ struct PlaceScratchModel: Equatable, Identifiable {
     var identifier: String = ""
     var name: String = ""
     var notes: String = ""
-    var email: String = ""
     var phoneNumber: String = ""
     var location: String = ""
     var possibleAssociates: [Place] = []
@@ -36,7 +35,6 @@ struct PlaceScratchModel: Equatable, Identifiable {
         self.identifier = UUID().uuidString
         self.name = ""
         self.notes = ""
-        self.email = ""
         self.phoneNumber = ""
         self.location = ""
         self.possibleAssociates = []
@@ -49,7 +47,6 @@ struct PlaceScratchModel: Equatable, Identifiable {
         self.identifier = existingPlace.identifier
         self.name = existingPlace.name
         self.notes = existingPlace.notes ?? ""
-        self.email = existingPlace.email ?? ""
         self.phoneNumber = existingPlace.phoneNumber ?? ""
         self.location = existingPlace.location ?? ""
         self.possibleAssociates = existingPlace.possibleAssociates ?? []
@@ -67,7 +64,6 @@ struct Place: Equatable, Identifiable {
     let identifier: String
     let name: String
     let notes: String?
-    let email: String?
     let phoneNumber: String?
     let location: String?
     var possibleAssociates: [Place]?
@@ -79,7 +75,6 @@ struct Place: Equatable, Identifiable {
         self.identifier = existingPlace.identifier
         self.name = existingPlace.name
         self.notes = existingPlace.notes
-        self.email = existingPlace.email
         self.phoneNumber = existingPlace.phoneNumber
         self.location = existingPlace.location
         self.possibleAssociates = existingPlace.possibleAssociates
@@ -93,7 +88,6 @@ struct Place: Equatable, Identifiable {
         self.identifier = scratchModel.identifier
         self.name = scratchModel.name
         self.notes = scratchModel.notes
-        self.email = scratchModel.email
         self.phoneNumber = scratchModel.phoneNumber
         self.location = scratchModel.location
         self.possibleAssociates = scratchModel.possibleAssociates
@@ -105,7 +99,6 @@ struct Place: Equatable, Identifiable {
     init(identifier: String,
     name: String,
     notes: String? = nil,
-    email: String? = nil,
     phoneNumber: String? = nil,
     location: String? = nil,
     possibleAssociates: [Place]? = nil,
@@ -115,7 +108,6 @@ struct Place: Equatable, Identifiable {
         self.identifier = identifier
         self.name = name
         self.notes = notes
-        self.email = email
         self.phoneNumber = phoneNumber
         self.location = location
         self.possibleAssociates = possibleAssociates
@@ -128,7 +120,6 @@ struct Place: Equatable, Identifiable {
         self.identifier = newIdentifier
         self.name = ""
         self.notes = nil
-        self.email = nil
         self.phoneNumber = nil
         self.location = nil
         self.possibleAssociates = nil
@@ -147,7 +138,6 @@ extension Place {
     static let identifier = "placeidentifier"
     static let nameKey = "placenameKey"
     static let notes = "placenotesKey"
-    static let email = "placeemailKey"
     static let phone = "placephoneKey"
     static let location = "placelocationKey"
     static let company = "placecompanyKey"

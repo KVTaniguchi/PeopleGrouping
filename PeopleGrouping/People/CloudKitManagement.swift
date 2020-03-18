@@ -96,62 +96,62 @@ final class CloudKitManager {
         }
     }
 
-    /// convenience
-    extension CloudKitManager {
-        private func updateRecord(ckRecord: CKRecord, person: Person) -> CKRecord {
-            ckRecord[Person.identifier] = person.identifier
-            ckRecord[Person.firstNameKey] = person.firstName
-            ckRecord[Person.lastNameKey] = person.lastName
-            ckRecord[Person.middleNameKey] = person.middleName
-            ckRecord[Person.company] = person.companyName
-            ckRecord[Person.location] = person.location
-            ckRecord[Person.email] = person.email
-            ckRecord[Person.notes] = person.notes
-            ckRecord[Person.phone] = person.phoneNumber
-            ckRecord[Person.occupation] = person.occupation
-            ckRecord[Person.shortDescription] = person.shortDescription
-            ckRecord[Person.ranking] = person.ranking
-            
-            return ckRecord
-        }
+/// convenience
+extension CloudKitManager {
+    private func updateRecord(ckRecord: CKRecord, person: Person) -> CKRecord {
+        ckRecord[Person.identifier] = person.identifier
+        ckRecord[Person.firstNameKey] = person.firstName
+        ckRecord[Person.lastNameKey] = person.lastName
+        ckRecord[Person.middleNameKey] = person.middleName
+        ckRecord[Person.company] = person.companyName
+        ckRecord[Person.location] = person.location
+        ckRecord[Person.email] = person.email
+        ckRecord[Person.notes] = person.notes
+        ckRecord[Person.phone] = person.phoneNumber
+        ckRecord[Person.occupation] = person.occupation
+        ckRecord[Person.shortDescription] = person.shortDescription
+        ckRecord[Person.ranking] = person.ranking
         
-        private func save(record: CKRecord) {
-            privateDatabase.save(record, completionHandler: { (_, error) in
-                print(error?.localizedDescription ?? "")
-            })
-        }
-        
-        private func process(record: CKRecord) -> Person? {
-            guard let identifier = record[Person.identifier] as? String,
-                let firstName = record[Person.firstNameKey] as? String,
-                let lastName = record[Person.lastNameKey] as? String
-            else { return nil }
-            
-            let middleName = record[Person.middleNameKey] as? String
-            let notes = record[Person.notes] as? String
-            let email = record[Person.email] as? String
-            let phone = record[Person.phone] as? String
-            let location = record[Person.location] as? String
-            let company = record[Person.company] as? String
-            let occupation = record[Person.occupation] as? String
-            let shortDescription = record[Person.shortDescription] as? String
-            let ranking = record[Person.ranking] as? Int ?? 0
-            
-            let associatedIds = record[Person.associates] as? [String]
-            
-            return Person(identifier: identifier,
-                          firstName: firstName,
-                          lastName: lastName,
-                          middleName: middleName,
-                          notes: notes,
-                          email: email,
-                          phoneNumber: phone,
-                          location: location,
-                          companyName: company,
-                          occupation: occupation,
-                          possibleAssociates: [],
-                          associateIds: associatedIds,
-                          shortDescription: shortDescription,
-                          ranking: ranking)
-        }
+        return ckRecord
     }
+    
+    private func save(record: CKRecord) {
+        privateDatabase.save(record, completionHandler: { (_, error) in
+            print(error?.localizedDescription ?? "")
+        })
+    }
+    
+    private func process(record: CKRecord) -> Person? {
+        guard let identifier = record[Person.identifier] as? String,
+            let firstName = record[Person.firstNameKey] as? String,
+            let lastName = record[Person.lastNameKey] as? String
+        else { return nil }
+        
+        let middleName = record[Person.middleNameKey] as? String
+        let notes = record[Person.notes] as? String
+        let email = record[Person.email] as? String
+        let phone = record[Person.phone] as? String
+        let location = record[Person.location] as? String
+        let company = record[Person.company] as? String
+        let occupation = record[Person.occupation] as? String
+        let shortDescription = record[Person.shortDescription] as? String
+        let ranking = record[Person.ranking] as? Int ?? 0
+        
+        let associatedIds = record[Person.associates] as? [String]
+        
+        return Person(identifier: identifier,
+                      firstName: firstName,
+                      lastName: lastName,
+                      middleName: middleName,
+                      notes: notes,
+                      email: email,
+                      phoneNumber: phone,
+                      location: location,
+                      companyName: company,
+                      occupation: occupation,
+                      possibleAssociates: [],
+                      associateIds: associatedIds,
+                      shortDescription: shortDescription,
+                      ranking: ranking)
+    }
+}

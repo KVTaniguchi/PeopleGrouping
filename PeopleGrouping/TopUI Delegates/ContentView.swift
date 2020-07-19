@@ -37,11 +37,6 @@ struct ContentView: View {
                     Image(systemName: "perspective")
                     Text("places")
                 }.tag(1)
-                AllList()
-                .tabItem {
-                    Image(systemName: "smallcircle.fill.circle")
-                    Text("all")
-                }.tag(2)
             }
             .navigationBarTitle(activeTabTitle)
             .navigationBarItems(leading:

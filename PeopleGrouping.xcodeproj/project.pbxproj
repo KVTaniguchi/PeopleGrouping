@@ -30,6 +30,7 @@
 		BDA295BA23E4C0FB0040D4BB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD8A386323D42822003EC183 /* Info.plist */; };
 		BDA295BE23E533F30040D4BB /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA295BD23E533F30040D4BB /* Sorting.swift */; };
 		BDC81A6724C3E77000D6777C /* PlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6624C3E77000D6777C /* PlaceRow.swift */; };
+		BDC81A6924C3E87B00D6777C /* PlaceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6824C3E87B00D6777C /* PlaceResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,7 @@
 		BD81463423DD67540050DCF7 /* PeopleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetail.swift; sourceTree = "<group>"; };
 		BD81463723DD72CD0050DCF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BD81463A23DD797F0050DCF7 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
-		BD8A385223D4281E003EC183 /* PeopleGrouping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleGrouping.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8A385223D4281E003EC183 /* Cancel Culture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cancel Culture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A385523D4281E003EC183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD8A385723D4281E003EC183 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD8A385923D4281E003EC183 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		BDA295BB23E4C5B10040D4BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BDA295BD23E533F30040D4BB /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
 		BDC81A6624C3E77000D6777C /* PlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRow.swift; sourceTree = "<group>"; };
+		BDC81A6824C3E87B00D6777C /* PlaceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				BD49726B23F82D220045803D /* Place.swift */,
+				BDC81A6824C3E87B00D6777C /* PlaceResource.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -162,7 +165,7 @@
 		BD8A385323D4281E003EC183 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BD8A385223D4281E003EC183 /* PeopleGrouping.app */,
+				BD8A385223D4281E003EC183 /* Cancel Culture.app */,
 				BD8A386823D42822003EC183 /* PeopleGroupingTests.xctest */,
 			);
 			name = Products;
@@ -271,7 +274,7 @@
 			);
 			name = PeopleGrouping;
 			productName = "Blacklister - Categorize People";
-			productReference = BD8A385223D4281E003EC183 /* PeopleGrouping.app */;
+			productReference = BD8A385223D4281E003EC183 /* Cancel Culture.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BD8A386723D42822003EC183 /* PeopleGroupingTests */ = {
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD3C927E23F83B0400B62B61 /* AllList.swift in Sources */,
+				BDC81A6924C3E87B00D6777C /* PlaceResource.swift in Sources */,
 				BD8A387F23D42B8A003EC183 /* PeopleList.swift in Sources */,
 				BD3C927B23F83ADE00B62B61 /* PlaceList.swift in Sources */,
 				BD49726C23F82D220045803D /* Place.swift in Sources */,
@@ -535,9 +539,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Taniguchi.PeopleGrouping;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cancel Culture";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -556,9 +560,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Taniguchi.PeopleGrouping;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cancel Culture";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -20,7 +20,6 @@ final class CloudKitManager {
     private init() { }
         
         func mutate(person: Person, completion: @escaping (Error?) -> Void) {
-            
             fetchRecord(identifier: person.identifier) { [weak self] (records, error) in
                 guard let record = records?.first else {
                     completion(error)

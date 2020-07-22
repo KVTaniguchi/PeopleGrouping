@@ -29,8 +29,11 @@
 		BD8A388923D433BF003EC183 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8A388823D433BF003EC183 /* CloudKit.framework */; };
 		BDA295BA23E4C0FB0040D4BB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD8A386323D42822003EC183 /* Info.plist */; };
 		BDA295BE23E533F30040D4BB /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA295BD23E533F30040D4BB /* Sorting.swift */; };
+		BDB4CD6A24C682EC0018A141 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4CD6924C682EC0018A141 /* SearchBar.swift */; };
+		BDB4CD6C24C68F400018A141 /* QuickSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4CD6B24C68F400018A141 /* QuickSearch.swift */; };
 		BDC81A6724C3E77000D6777C /* PlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6624C3E77000D6777C /* PlaceRow.swift */; };
 		BDC81A6924C3E87B00D6777C /* PlaceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6824C3E87B00D6777C /* PlaceResource.swift */; };
+		BDC81A6C24C3F03C00D6777C /* QuickSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6B24C3F03C00D6777C /* QuickSearchList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +74,11 @@
 		BD8A388823D433BF003EC183 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BDA295BB23E4C5B10040D4BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BDA295BD23E533F30040D4BB /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		BDB4CD6924C682EC0018A141 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BDB4CD6B24C68F400018A141 /* QuickSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearch.swift; sourceTree = "<group>"; };
 		BDC81A6624C3E77000D6777C /* PlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRow.swift; sourceTree = "<group>"; };
 		BDC81A6824C3E87B00D6777C /* PlaceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResource.swift; sourceTree = "<group>"; };
+		BDC81A6B24C3F03C00D6777C /* QuickSearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,7 @@
 		BD8A385423D4281E003EC183 /* PeopleGrouping */ = {
 			isa = PBXGroup;
 			children = (
+				BDC81A6A24C3F02500D6777C /* QuickSearch */,
 				BD3C927F23F9B60C00B62B61 /* Place Detail */,
 				BD3C927C23F83AFB00B62B61 /* AllList */,
 				BD3C927923F83ACE00B62B61 /* PlaceList */,
@@ -255,6 +262,16 @@
 				BDA295BD23E533F30040D4BB /* Sorting.swift */,
 			);
 			path = Sorting;
+			sourceTree = "<group>";
+		};
+		BDC81A6A24C3F02500D6777C /* QuickSearch */ = {
+			isa = PBXGroup;
+			children = (
+				BDC81A6B24C3F03C00D6777C /* QuickSearchList.swift */,
+				BDB4CD6924C682EC0018A141 /* SearchBar.swift */,
+				BDB4CD6B24C68F400018A141 /* QuickSearch.swift */,
+			);
+			path = QuickSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,13 +385,16 @@
 				BD81463B23DD797F0050DCF7 /* KeyboardHelper.swift in Sources */,
 				BD8A388523D42E4D003EC183 /* PersonRow.swift in Sources */,
 				BD8A385623D4281E003EC183 /* AppDelegate.swift in Sources */,
+				BDB4CD6C24C68F400018A141 /* QuickSearch.swift in Sources */,
 				BDA295BE23E533F30040D4BB /* Sorting.swift in Sources */,
 				BD8A385823D4281E003EC183 /* SceneDelegate.swift in Sources */,
 				BD8A388123D42BA2003EC183 /* PeopleResource.swift in Sources */,
 				BD8A387A23D4285F003EC183 /* Person.swift in Sources */,
+				BDC81A6C24C3F03C00D6777C /* QuickSearchList.swift in Sources */,
 				BD8A385A23D4281E003EC183 /* ContentView.swift in Sources */,
 				BD8A388323D42DF5003EC183 /* CloudKitManagement.swift in Sources */,
 				BD81463523DD67540050DCF7 /* PeopleDetail.swift in Sources */,
+				BDB4CD6A24C682EC0018A141 /* SearchBar.swift in Sources */,
 				BD81463823DD72CD0050DCF7 /* SettingsView.swift in Sources */,
 				BDC81A6724C3E77000D6777C /* PlaceRow.swift in Sources */,
 			);

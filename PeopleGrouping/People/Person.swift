@@ -27,6 +27,19 @@ struct PersonScratchModel: Equatable, Identifiable {
     var associateIds: [String] = []
     var shortDescription: String = ""
     var ranking: Int = 0
+    var personPlaceOrThing: PersonPlaceOrThing = .person
+    var allPurposeName: String = ""
+    
+    var name: String {
+        [firstName,
+         lastName,
+         companyName,
+         email,
+         location,
+         companyName,
+         occupation
+            ].filter{ !$0.isEmpty }.joined(separator: " ")
+    }
     
     var rankingString: String {
         if ranking == 0 {
@@ -51,6 +64,8 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.associateIds = []
         self.shortDescription = ""
         self.ranking = 0
+        self.personPlaceOrThing = .person
+        self.allPurposeName = ""
     }
     
     init(existingPerson: Person) {
@@ -68,6 +83,8 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.associateIds = existingPerson.associateIds ?? []
         self.shortDescription = existingPerson.shortDescription ?? ""
         self.ranking = existingPerson.ranking
+        self.personPlaceOrThing = existingPerson.personPlaceOrThing
+        self.allPurposeName = existingPerson.allPurposeName ?? ""
     }
 }
 
@@ -90,6 +107,8 @@ struct Person: Equatable, Identifiable {
     let associateIds: [String]?
     let shortDescription: String?
     let ranking: Int
+    let personPlaceOrThing: PersonPlaceOrThing
+    let allPurposeName: String?
     
     init(existingPerson: Person) {
         self.identifier = existingPerson.identifier
@@ -106,6 +125,8 @@ struct Person: Equatable, Identifiable {
         self.associateIds = existingPerson.associateIds
         self.shortDescription = existingPerson.shortDescription
         self.ranking = existingPerson.ranking
+        self.personPlaceOrThing = existingPerson.personPlaceOrThing
+        self.allPurposeName = existingPerson.allPurposeName
     }
     
     
@@ -124,6 +145,8 @@ struct Person: Equatable, Identifiable {
         self.associateIds = scratchModel.associateIds
         self.shortDescription = scratchModel.shortDescription
         self.ranking = scratchModel.ranking
+        self.personPlaceOrThing = scratchModel.personPlaceOrThing
+        self.allPurposeName = scratchModel.allPurposeName
     }
     
     init(identifier: String,
@@ -139,7 +162,10 @@ struct Person: Equatable, Identifiable {
     possibleAssociates: [Person]? = nil,
     associateIds: [String]? = nil,
     shortDescription: String? = nil,
-    ranking: Int = 0) {
+    ranking: Int = 0,
+    personPlaceOrThing: PersonPlaceOrThing = .person,
+    allPurposeName: String?
+    ) {
         self.identifier = identifier
         self.firstName = firstName
         self.lastName = lastName
@@ -154,6 +180,8 @@ struct Person: Equatable, Identifiable {
         self.associateIds = associateIds
         self.shortDescription = shortDescription
         self.ranking = ranking
+        self.personPlaceOrThing = personPlaceOrThing
+        self.allPurposeName = allPurposeName
     }
     
     private init(newIdentifier: String) {
@@ -171,6 +199,8 @@ struct Person: Equatable, Identifiable {
         self.associateIds = nil
         self.shortDescription = nil
         self.ranking = 0
+        self.personPlaceOrThing = .person
+        self.allPurposeName = ""
     }
     
     static func newPerson() -> Person {
@@ -180,7 +210,18 @@ struct Person: Equatable, Identifiable {
 
 extension Person {
     var fullName: String {
-        [firstName, middleName, lastName].compactMap { $0 }.joined(separator: " ")
+        [firstName, middleName, lastName, allPurposeName.flatMap { $0 }].compactMap { $0 }.joined(separator: " ")
+    }
+    
+    var haystack: String {
+        [firstName,
+         lastName,
+         companyName,
+         email,
+         location,
+         companyName,
+         occupation
+            ].compactMap { $0 }.filter{ !$0.isEmpty }.joined(separator: " ")
     }
 }
 
@@ -199,4 +240,12 @@ extension Person {
     static let associates = "associatesKey"
     static let shortDescription = "shortDescriptionKey"
     static let ranking = "rankingKey"
+    static let personPlaceOrThing = "personPlaceorThing"
+    static let allPurposeName = "allPurposeName"
+}
+
+enum PersonPlaceOrThing: Int {
+    case person = 0
+    case place = 1
+    case thing = 2
 }

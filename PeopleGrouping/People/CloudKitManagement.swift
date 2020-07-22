@@ -110,6 +110,8 @@ extension CloudKitManager {
         ckRecord[Person.occupation] = person.occupation
         ckRecord[Person.shortDescription] = person.shortDescription
         ckRecord[Person.ranking] = person.ranking
+        ckRecord[Person.personPlaceOrThing] = person.personPlaceOrThing.rawValue
+        ckRecord[Person.allPurposeName] = person.allPurposeName
         
         return ckRecord
     }
@@ -135,6 +137,8 @@ extension CloudKitManager {
         let occupation = record[Person.occupation] as? String
         let shortDescription = record[Person.shortDescription] as? String
         let ranking = record[Person.ranking] as? Int ?? 0
+        let personPlaceOrThing = record[Person.personPlaceOrThing] as? Int ?? 0
+        let allPurposeName = record[Person.allPurposeName] as? String
         
         let associatedIds = record[Person.associates] as? [String]
         
@@ -151,6 +155,9 @@ extension CloudKitManager {
                       possibleAssociates: [],
                       associateIds: associatedIds,
                       shortDescription: shortDescription,
-                      ranking: ranking)
+                      ranking: ranking,
+                      personPlaceOrThing: PersonPlaceOrThing(rawValue: personPlaceOrThing) ?? .person,
+                      allPurposeName: allPurposeName
+        )
     }
 }

@@ -41,6 +41,10 @@ final class PeopleResource: ObservableObject {
     }
     
     var people: [Person] {
-        itemsHashed.values.sorted(by: { $0.ranking > $1.ranking })
+        itemsHashed.values.filter{ $0.personPlaceOrThing == .person }.sorted(by: { $0.ranking > $1.ranking })
+    }
+    
+    var places: [Person] {
+        itemsHashed.values.filter{ $0.personPlaceOrThing == .place }.sorted(by: { $0.ranking > $1.ranking })
     }
 }

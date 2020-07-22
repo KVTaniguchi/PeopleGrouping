@@ -15,31 +15,40 @@ struct ContentView: View {
     @State private var activeTab: Int = 0
     
     private var activeTabTitle: String {
-        if activeTab == 0 {
+        switch activeTab {
+        case 0:
+            return "search"
+        case 1:
             return "people"
-        } else if activeTab == 1 {
+        case 2:
             return "places"
-        } else {
-            return "all"
+        default:
+            return ""
         }
     }
     
     var body: some View {
         NavigationView {
             TabView(selection: $activeTab) {
+                QuickSearch()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("search")
+                }.tag(0)
                 PeopleList()
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("people")
-                }.tag(0)
+                }.tag(1)
                 PlaceList()
                 .tabItem {
                     Image(systemName: "perspective")
                     Text("places")
-                }.tag(1)
+                }.tag(2)
             }
             .navigationBarTitle(activeTabTitle)
-            .navigationBarItems(leading:
+            .navigationBarItems(
+                leading:
                 Button(action: {
                     self.isShowingSettings = true
                 }) {

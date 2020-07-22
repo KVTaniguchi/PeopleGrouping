@@ -14,29 +14,23 @@ struct PlaceRow: View {
 
     let id: String
     
-    init(personId: String) {
-        id = personId
+    init(placeId: String) {
+        id = placeId
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             HStack {
-                Text(resource.itemsHashed[self.id]?.fullName ?? "no name")
+                Text(resource.itemsHashed[self.id]?.allPurposeName ?? "no name")
                     .fontWeight(.bold)
                 Spacer()
                 Text(resource.itemsHashed[self.id]?.shortDescription ?? "")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-            HStack {
-                Text(resource.itemsHashed[self.id]?.location ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                Spacer()
-                Text(resource.itemsHashed[self.id]?.companyName ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
+            Text(resource.itemsHashed[self.id]?.location ?? "")
+            .font(.subheadline)
+            .foregroundColor(.secondary)
         }
     }
 }

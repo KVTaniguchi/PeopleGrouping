@@ -9,13 +9,35 @@
 import SwiftUI
 
 struct PlaceList: View {
+    @EnvironmentObject var resource: PeopleResource
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(resource.places) { place in
+                NavigationLink(destination: PlaceDetail()) {
+                    PlaceRow(placeId: place.id)
+                }
+            }
+        }
     }
 }
 
-struct PlaceList_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaceList()
-    }
-}
+//struct PlaceList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaceList()
+//    }
+//}
+
+//struct PeopleList: View {
+//    @EnvironmentObject var resource: PeopleResource
+//
+//    var body: some View {
+//        List {
+//            ForEach(resource.people) { person in
+//                NavigationLink(destination: PeopleDetail(person: person)) {
+//                    PersonRow(personId: person.identifier)
+//                }
+//            }
+//        }
+//    }
+//}

@@ -13,20 +13,24 @@ struct QuickSearch: View {
     @EnvironmentObject var resource: PeopleResource
     @State var needle: String = ""
     
-    // i want empty if search is empty
-    
     var body: some View {
         VStack {
             SearchBar(text: $needle)
             Spacer()
             List(filtered) { place in
-                self.highlight(
-                    string: place.person.fullName,
-                    indices: place.indices
-                )
+                NavigationLink(destination: PeopleDetail(person: place.person)) {
+                    self.highlight(
+                        string: place.person.fullName,
+                        indices: place.indices
+                    )
+                }
             }
         }
     }
+    
+//    NavigationLink(destination: PeopleDetail(person: person)) {
+//        PersonRow(personId: person.identifier)
+//    }
     
     var filtered: [QuickSearchResult] {
         return resource.all.compactMap {

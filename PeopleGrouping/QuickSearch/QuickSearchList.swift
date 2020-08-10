@@ -28,10 +28,6 @@ struct QuickSearch: View {
         }
     }
     
-//    NavigationLink(destination: PeopleDetail(person: person)) {
-//        PersonRow(personId: person.identifier)
-//    }
-    
     var filtered: [QuickSearchResult] {
         return resource.all.compactMap {
             guard let match = $0.haystack.fuzzyMatch(needle), !match.isEmpty else { return nil }

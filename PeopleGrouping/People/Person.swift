@@ -49,7 +49,7 @@ struct PersonScratchModel: Equatable, Identifiable {
         }
     }
     
-    init() {
+    init(isPersonDetail: Bool) {
         self.identifier = UUID().uuidString
         self.firstName = ""
         self.lastName = ""
@@ -64,7 +64,7 @@ struct PersonScratchModel: Equatable, Identifiable {
         self.associateIds = []
         self.shortDescription = ""
         self.ranking = 0
-        self.personPlaceOrThing = .person
+        self.personPlaceOrThing = isPersonDetail ? .person : .place
         self.allPurposeName = ""
     }
     

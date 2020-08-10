@@ -14,7 +14,7 @@ struct PlaceList: View {
     var body: some View {
         List {
             ForEach(resource.places) { place in
-                NavigationLink(destination: PlaceDetail()) {
+                NavigationLink(destination: PeopleDetail(person: place, isPersonDetail: false)) {
                     PlaceRow(placeId: place.id)
                 }
             }

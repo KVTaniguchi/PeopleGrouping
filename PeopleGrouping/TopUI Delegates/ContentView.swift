@@ -27,6 +27,41 @@ struct ContentView: View {
         }
     }
     
+    private var addNewButton: some View {
+        Button(action: {
+            self.isShowingingNewPerson = true
+        }) {
+            Image(systemName: "plus.square.fill")
+                .resizable()
+                .frame(width: 25.0, height: 25.0)
+                .foregroundColor(Color.blue)
+        }.sheet(isPresented: self.$isShowingingNewPerson, onDismiss: {
+            self.isShowingingNewPerson = false
+        }) {
+            PeopleDetail(isPersonDetail: self.activeTab == 1).environmentObject(self.resource)
+        }
+    }
+    
+    fileprivate func rightNavButton(shouldShow: Bool) -> some View {
+        if shouldShow {
+            return addNewButton
+        } else {
+            return addNewButton
+        }
+    }
+    
+    fileprivate func leftNavButton() -> some View {
+        return Button(action: {
+            self.isShowingSettings = true
+        }) {
+            Image(systemName: "gear").foregroundColor(Color.blue)
+        }.sheet(isPresented: self.$isShowingSettings, onDismiss: {
+            self.isShowingSettings = false
+        }) {
+            SettingsView()
+        }
+    }
+    
     var body: some View {
         NavigationView {
             TabView(selection: $activeTab) {
@@ -49,25 +84,9 @@ struct ContentView: View {
             .navigationBarTitle(activeTabTitle)
             .navigationBarItems(
                 leading:
-                Button(action: {
-                    self.isShowingSettings = true
-                }) {
-                    Image(systemName: "gear").foregroundColor(Color.blue)
-                }.sheet(isPresented: self.$isShowingSettings, onDismiss: {
-                    self.isShowingSettings = false
-                }) {
-                    SettingsView()
-                },
+                leftNavButton(),
                 trailing:
-                Button(action: {
-                    self.isShowingingNewPerson = true
-                }) {
-                    Image(systemName: "plus.square.fill").resizable().frame(width: 25.0, height: 25.0).foregroundColor(Color.blue)
-                }.sheet(isPresented: self.$isShowingingNewPerson, onDismiss: {
-                    self.isShowingingNewPerson = false
-                }) {
-                    PeopleDetail().environmentObject(self.resource)
-                }
+                rightNavButton(shouldShow: activeTab > 0)
             )
         }
     }

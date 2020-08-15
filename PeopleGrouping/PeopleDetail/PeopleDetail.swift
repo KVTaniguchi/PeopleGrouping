@@ -11,8 +11,7 @@ import SwiftUI
 
 struct PeopleDetail: View {
     @EnvironmentObject var resource: PeopleResource
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
     @State private var showingAlert = false
     @State private var isSaving = false
     @State private var shouldDisableSave: Bool = false
@@ -31,7 +30,7 @@ struct PeopleDetail: View {
     }
     
     var body: some View {
-        NavigationView {
+        ZStack {
             if isSaving {
                 Text("Saving...")
             } else if isPersonDetail {
@@ -105,9 +104,6 @@ struct PeopleDetail: View {
                                     guard let record = records?.first else { return }
                                     CloudKitManager.shared.delete(record: record) { (recordId, error) in
                                         self.resource.itemsHashed.removeValue(forKey: self.modifiable.identifier)
-                                        DispatchQueue.main.async {
-                                            self.presentationMode.wrappedValue.dismiss()
-                                        }
                                     }
                                 }
                             }.foregroundColor(.red)
@@ -182,9 +178,6 @@ struct PeopleDetail: View {
                                     guard let record = records?.first else { return }
                                     CloudKitManager.shared.delete(record: record) { (recordId, error) in
                                         self.resource.itemsHashed.removeValue(forKey: self.modifiable.identifier)
-                                        DispatchQueue.main.async {
-                                            self.presentationMode.wrappedValue.dismiss()
-                                        }
                                     }
                                 }
                             }.foregroundColor(.red)
@@ -198,15 +191,7 @@ struct PeopleDetail: View {
     }
     
     private func updateAndDismiss(person: Person) {
-        self.resource.itemsHashed[person.identifier] = person
-        DispatchQueue.main.async {
-            self.presentationMode.wrappedValue.dismiss()
-        }
+        isSaving = false
+        resource.itemsHashed[person.identifier] = person
     }
 }
-
-//struct PeopleDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PeopleDetail(category: .all)
-//    }
-//}

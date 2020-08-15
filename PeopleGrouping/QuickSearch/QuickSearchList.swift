@@ -12,18 +12,24 @@ import SwiftUI
 struct QuickSearch: View {
     @EnvironmentObject var resource: PeopleResource
     @State var needle: String = ""
+    @State var pushed: Bool = false
     
     var body: some View {
-        VStack {
-            SearchBar(text: $needle)
-            Spacer()
-            List(filtered) { place in
-                NavigationLink(destination: PeopleDetail(person: place.person)) {
-                    self.highlight(
-                        string: place.person.fullName,
-                        indices: place.indices
-                    )
+        NavigationView {
+            VStack {
+                SearchBar(text: $needle)
+                Spacer()
+                List(filtered) { place in
+                    NavigationLink(
+                    destination: PeopleDetail(person: place.person)
+                    ) {
+                        self.highlight(
+                            string: place.person.fullName,
+                            indices: place.indices
+                        )
+                    }
                 }
+                .navigationBarTitle("search")
             }
         }
     }

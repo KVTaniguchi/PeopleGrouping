@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD3C927B23F83ADE00B62B61 /* PlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3C927A23F83ADE00B62B61 /* PlaceList.swift */; };
-		BD3C927E23F83B0400B62B61 /* AllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3C927D23F83B0400B62B61 /* AllList.swift */; };
-		BD49726C23F82D220045803D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD49726B23F82D220045803D /* Place.swift */; };
 		BD81463523DD67540050DCF7 /* PeopleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81463423DD67540050DCF7 /* PeopleDetail.swift */; };
-		BD81463823DD72CD0050DCF7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81463723DD72CD0050DCF7 /* SettingsView.swift */; };
 		BD81463B23DD797F0050DCF7 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD81463A23DD797F0050DCF7 /* KeyboardHelper.swift */; };
 		BD8A385623D4281E003EC183 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A385523D4281E003EC183 /* AppDelegate.swift */; };
 		BD8A385823D4281E003EC183 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A385723D4281E003EC183 /* SceneDelegate.swift */; };
@@ -31,7 +28,6 @@
 		BDB4CD6A24C682EC0018A141 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4CD6924C682EC0018A141 /* SearchBar.swift */; };
 		BDB4CD6C24C68F400018A141 /* QuickSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4CD6B24C68F400018A141 /* QuickSearch.swift */; };
 		BDC81A6724C3E77000D6777C /* PlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6624C3E77000D6777C /* PlaceRow.swift */; };
-		BDC81A6924C3E87B00D6777C /* PlaceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6824C3E87B00D6777C /* PlaceResource.swift */; };
 		BDC81A6C24C3F03C00D6777C /* QuickSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC81A6B24C3F03C00D6777C /* QuickSearchList.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +43,7 @@
 
 /* Begin PBXFileReference section */
 		BD3C927A23F83ADE00B62B61 /* PlaceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceList.swift; sourceTree = "<group>"; };
-		BD3C927D23F83B0400B62B61 /* AllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllList.swift; sourceTree = "<group>"; };
-		BD49726B23F82D220045803D /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BD81463423DD67540050DCF7 /* PeopleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetail.swift; sourceTree = "<group>"; };
-		BD81463723DD72CD0050DCF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BD81463A23DD797F0050DCF7 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		BD8A385223D4281E003EC183 /* Cancel Culture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cancel Culture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8A385523D4281E003EC183 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +68,6 @@
 		BDB4CD6924C682EC0018A141 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BDB4CD6B24C68F400018A141 /* QuickSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearch.swift; sourceTree = "<group>"; };
 		BDC81A6624C3E77000D6777C /* PlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRow.swift; sourceTree = "<group>"; };
-		BDC81A6824C3E87B00D6777C /* PlaceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceResource.swift; sourceTree = "<group>"; };
 		BDC81A6B24C3F03C00D6777C /* QuickSearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,37 +99,12 @@
 			path = PlaceList;
 			sourceTree = "<group>";
 		};
-		BD3C927C23F83AFB00B62B61 /* AllList */ = {
-			isa = PBXGroup;
-			children = (
-				BD3C927D23F83B0400B62B61 /* AllList.swift */,
-			);
-			path = AllList;
-			sourceTree = "<group>";
-		};
-		BD49726A23F82D100045803D /* Places */ = {
-			isa = PBXGroup;
-			children = (
-				BD49726B23F82D220045803D /* Place.swift */,
-				BDC81A6824C3E87B00D6777C /* PlaceResource.swift */,
-			);
-			path = Places;
-			sourceTree = "<group>";
-		};
 		BD81463323DD67390050DCF7 /* PeopleDetail */ = {
 			isa = PBXGroup;
 			children = (
 				BD81463423DD67540050DCF7 /* PeopleDetail.swift */,
 			);
 			path = PeopleDetail;
-			sourceTree = "<group>";
-		};
-		BD81463623DD72C30050DCF7 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				BD81463723DD72CD0050DCF7 /* SettingsView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		BD81463923DD79770050DCF7 /* Helpers */ = {
@@ -171,12 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				BDC81A6A24C3F02500D6777C /* QuickSearch */,
-				BD3C927C23F83AFB00B62B61 /* AllList */,
 				BD3C927923F83ACE00B62B61 /* PlaceList */,
-				BD49726A23F82D100045803D /* Places */,
 				BDA295BC23E533E50040D4BB /* Sorting */,
 				BD81463923DD79770050DCF7 /* Helpers */,
-				BD81463623DD72C30050DCF7 /* Settings */,
 				BD81463323DD67390050DCF7 /* PeopleDetail */,
 				BD8A388623D433BB003EC183 /* PeopleGrouping.entitlements */,
 				BD8A387D23D42B7C003EC183 /* PeopleList */,
@@ -365,11 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD3C927E23F83B0400B62B61 /* AllList.swift in Sources */,
-				BDC81A6924C3E87B00D6777C /* PlaceResource.swift in Sources */,
 				BD8A387F23D42B8A003EC183 /* PeopleList.swift in Sources */,
 				BD3C927B23F83ADE00B62B61 /* PlaceList.swift in Sources */,
-				BD49726C23F82D220045803D /* Place.swift in Sources */,
 				BD81463B23DD797F0050DCF7 /* KeyboardHelper.swift in Sources */,
 				BD8A388523D42E4D003EC183 /* PersonRow.swift in Sources */,
 				BD8A385623D4281E003EC183 /* AppDelegate.swift in Sources */,
@@ -383,7 +344,6 @@
 				BD8A388323D42DF5003EC183 /* CloudKitManagement.swift in Sources */,
 				BD81463523DD67540050DCF7 /* PeopleDetail.swift in Sources */,
 				BDB4CD6A24C682EC0018A141 /* SearchBar.swift in Sources */,
-				BD81463823DD72CD0050DCF7 /* SettingsView.swift in Sources */,
 				BDC81A6724C3E77000D6777C /* PlaceRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

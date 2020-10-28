@@ -16,14 +16,13 @@ struct PeopleDetail: View {
     @State private var isSaving = false
     @State private var shouldDisableSave: Bool = false
     @State private var modifiable: PersonScratchModel
-    private var isNewPerson = false
+    @State var isNewPerson = false
     private var isPersonDetail = false
     
     init(person: Person? = nil, isPersonDetail: Bool = true) {
         if let person = person {
             _modifiable = State(initialValue: PersonScratchModel(existingPerson: person))
         } else {
-            isNewPerson = true
             _modifiable = State(initialValue: PersonScratchModel(isPersonDetail: isPersonDetail))
         }
         self.isPersonDetail = isPersonDetail
@@ -35,56 +34,22 @@ struct PeopleDetail: View {
                 Text("Saving...")
             } else if isPersonDetail {
                 Form {
-                    Group {
-                        TextField("First Name", text: $modifiable.firstName, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        TextField("Last Name", text: $modifiable.lastName, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        TextField("Middle Name", text: $modifiable.middleName, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        Picker(selection: $modifiable.ranking, label: Text(modifiable.rankingString)) {
-                            ForEach((1..<11).reversed(), id: \.self) { int in
-                                Text("\(int)")
-                            }
-                        }
-                        TextField("Location", text: $modifiable.location, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        TextField("Notes", text: $modifiable.notes, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        TextField("Short Description ", text: $modifiable.shortDescription, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                    }
+                    PeopleDataEntryFields(
+                        modifiable: $modifiable,
+                        shouldDisableSave: $shouldDisableSave
+                    )
                     
                     // Buttons group
                     Group {
                         // save section
                         Section {
-                            Button("Save") {
-                                guard FileManager.default.ubiquityIdentityToken != nil else {
-                                    self.showingAlert = true
-                                    return
-                                }
-                                
-                                self.isSaving = true
-                                
-                                let updatedPerson = Person(scratchModel: self.modifiable)
-                                if self.isNewPerson {
-                                    CloudKitManager.shared.saveNew(person: updatedPerson) { (error) in
-                                        self.updateAndDismiss(person: updatedPerson)
-                                    }
-                                } else {
-                                    CloudKitManager.shared.mutate(person: updatedPerson) { _ in
-                                        self.updateAndDismiss(person: updatedPerson)
-                                    }
-                                }
-                            }
-                            .disabled(shouldDisableSave)
+                            SaveButton(
+                                shouldDisableSave: $shouldDisableSave,
+                                modifiable: $modifiable,
+                                isNewPerson: $isNewPerson,
+                                isSaving: $isSaving,
+                                showingAlert: $showingAlert
+                            )
                             .alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Not signed in"),
                                       message: Text("Please sign in to icloud"),
@@ -114,51 +79,22 @@ struct PeopleDetail: View {
                 .navigationBarTitle("people")
             } else {
                 Form {
-                    Group {
-                        TextField("Name", text: $modifiable.allPurposeName, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        
-                        Picker(selection: $modifiable.ranking, label: Text(modifiable.rankingString)) {
-                            ForEach((1..<11).reversed(), id: \.self) { int in
-                                Text("\(int)")
-                            }
-                        }
-                        TextField("Location", text: $modifiable.location, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        TextField("Notes", text: $modifiable.notes, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                        TextField("Short Description ", text: $modifiable.shortDescription, onEditingChanged: { didChange in
-                            self.shouldDisableSave = didChange
-                        })
-                    }
+                    PlaceEntryFields(
+                        modifiable: $modifiable,
+                        shouldDisableSave: $shouldDisableSave
+                    )
                     
                     // Buttons group
                     Group {
                         // save section
                         Section {
-                            Button("Save") {
-                                guard FileManager.default.ubiquityIdentityToken != nil else {
-                                    self.showingAlert = true
-                                    return
-                                }
-                                
-                                self.isSaving = true
-                                
-                                let updatedPerson = Person(scratchModel: self.modifiable)
-                                if self.isNewPerson {
-                                    CloudKitManager.shared.saveNew(person: updatedPerson) { (error) in
-                                        self.updateAndDismiss(person: updatedPerson)
-                                    }
-                                } else {
-                                    CloudKitManager.shared.mutate(person: updatedPerson) { _ in
-                                        self.updateAndDismiss(person: updatedPerson)
-                                    }
-                                }
-                            }
-                            .disabled(shouldDisableSave)
+                            SaveButton(
+                                shouldDisableSave: $shouldDisableSave,
+                                modifiable: $modifiable,
+                                isNewPerson: $isNewPerson,
+                                isSaving: $isSaving,
+                                showingAlert: $showingAlert
+                            )
                             .alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Not signed in"),
                                       message: Text("Please sign in to icloud"),

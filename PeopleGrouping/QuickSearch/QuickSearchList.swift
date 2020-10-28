@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-// goal create a quick search list in swift UI
 struct QuickSearch: View {
     @EnvironmentObject var resource: PeopleResource
     @State var needle: String = ""

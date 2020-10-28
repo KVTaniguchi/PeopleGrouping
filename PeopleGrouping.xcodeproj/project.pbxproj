@@ -23,6 +23,7 @@
 		BD8A388323D42DF5003EC183 /* CloudKitManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A388223D42DF5003EC183 /* CloudKitManagement.swift */; };
 		BD8A388523D42E4D003EC183 /* PersonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A388423D42E4D003EC183 /* PersonRow.swift */; };
 		BD8A388923D433BF003EC183 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8A388823D433BF003EC183 /* CloudKit.framework */; };
+		BD9A14FF25499BDB00785712 /* QuickSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9A14FE25499BDB00785712 /* QuickSearchResult.swift */; };
 		BDA295BA23E4C0FB0040D4BB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD8A386323D42822003EC183 /* Info.plist */; };
 		BDA295BE23E533F30040D4BB /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA295BD23E533F30040D4BB /* Sorting.swift */; };
 		BDB4CD6A24C682EC0018A141 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4CD6924C682EC0018A141 /* SearchBar.swift */; };
@@ -63,6 +64,7 @@
 		BD8A388423D42E4D003EC183 /* PersonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRow.swift; sourceTree = "<group>"; };
 		BD8A388623D433BB003EC183 /* PeopleGrouping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeopleGrouping.entitlements; sourceTree = "<group>"; };
 		BD8A388823D433BF003EC183 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BD9A14FE25499BDB00785712 /* QuickSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchResult.swift; sourceTree = "<group>"; };
 		BDA295BB23E4C5B10040D4BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BDA295BD23E533F30040D4BB /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
 		BDB4CD6924C682EC0018A141 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				BDC81A6B24C3F03C00D6777C /* QuickSearchList.swift */,
 				BDB4CD6924C682EC0018A141 /* SearchBar.swift */,
 				BDB4CD6B24C68F400018A141 /* QuickSearch.swift */,
+				BD9A14FE25499BDB00785712 /* QuickSearchResult.swift */,
 			);
 			path = QuickSearch;
 			sourceTree = "<group>";
@@ -272,7 +275,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Kevin Taniguchi";
 				TargetAttributes = {
 					BD8A385123D4281E003EC183 = {
@@ -331,6 +334,7 @@
 			files = (
 				BD8A387F23D42B8A003EC183 /* PeopleList.swift in Sources */,
 				BD3C927B23F83ADE00B62B61 /* PlaceList.swift in Sources */,
+				BD9A14FF25499BDB00785712 /* QuickSearchResult.swift in Sources */,
 				BD81463B23DD797F0050DCF7 /* KeyboardHelper.swift in Sources */,
 				BD8A388523D42E4D003EC183 /* PersonRow.swift in Sources */,
 				BD8A385623D4281E003EC183 /* AppDelegate.swift in Sources */,
@@ -404,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -464,6 +469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

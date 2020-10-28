@@ -54,16 +54,3 @@ struct QuickSearch: View {
         return result
     }
 }
-
-struct QuickSearchResult: Identifiable {
-    var id: String
-    
-    let person: Person
-    let indices: [String.Index]
-    
-    init(person: Person, indices: [String.Index]) {
-        self.person = person
-        self.indices = indices
-        self.id = person.identifier
-    }
-}

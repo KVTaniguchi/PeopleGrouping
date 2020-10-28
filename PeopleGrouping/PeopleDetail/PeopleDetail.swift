@@ -16,13 +16,15 @@ struct PeopleDetail: View {
     @State private var isSaving = false
     @State private var shouldDisableSave: Bool = false
     @State private var modifiable: PersonScratchModel
-    @State var isNewPerson = false
+    @State var isNewPerson: Bool
     private var isPersonDetail = false
     
     init(person: Person? = nil, isPersonDetail: Bool = true) {
         if let person = person {
+            _isNewPerson = State(initialValue: false)
             _modifiable = State(initialValue: PersonScratchModel(existingPerson: person))
         } else {
+            _isNewPerson = State(initialValue: true)
             _modifiable = State(initialValue: PersonScratchModel(isPersonDetail: isPersonDetail))
         }
         self.isPersonDetail = isPersonDetail
@@ -50,6 +52,7 @@ struct PeopleDetail: View {
                                 isSaving: $isSaving,
                                 showingAlert: $showingAlert
                             )
+                            .environmentObject(self.resource)
                             .alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Not signed in"),
                                       message: Text("Please sign in to icloud"),
@@ -58,20 +61,11 @@ struct PeopleDetail: View {
                         }
                         // Delete Section
                         Section {
-                            Button("Delete") {
-                                guard FileManager.default.ubiquityIdentityToken != nil else {
-                                    self.showingAlert = true
-                                    return
-                                }
-                                
-                                self.isSaving = true
-                                CloudKitManager.shared.fetchRecord(identifier: self.modifiable.identifier) { (records, error) in
-                                    guard let record = records?.first else { return }
-                                    CloudKitManager.shared.delete(record: record) { (recordId, error) in
-                                        self.resource.itemsHashed.removeValue(forKey: self.modifiable.identifier)
-                                    }
-                                }
-                            }.foregroundColor(.red)
+                            DeleteButton(
+                                showingAlert: $showingAlert,
+                                modifiable: $modifiable,
+                                isSaving: $isSaving
+                            ).environmentObject(self.resource)
                         }
                     }
                 }
@@ -95,6 +89,7 @@ struct PeopleDetail: View {
                                 isSaving: $isSaving,
                                 showingAlert: $showingAlert
                             )
+                            .environmentObject(self.resource)
                             .alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Not signed in"),
                                       message: Text("Please sign in to icloud"),
@@ -103,20 +98,11 @@ struct PeopleDetail: View {
                         }
                         // Delete Section
                         Section {
-                            Button("Delete") {
-                                guard FileManager.default.ubiquityIdentityToken != nil else {
-                                    self.showingAlert = true
-                                    return
-                                }
-                                
-                                self.isSaving = true
-                                CloudKitManager.shared.fetchRecord(identifier: self.modifiable.identifier) { (records, error) in
-                                    guard let record = records?.first else { return }
-                                    CloudKitManager.shared.delete(record: record) { (recordId, error) in
-                                        self.resource.itemsHashed.removeValue(forKey: self.modifiable.identifier)
-                                    }
-                                }
-                            }.foregroundColor(.red)
+                            DeleteButton(
+                                showingAlert: $showingAlert,
+                                modifiable: $modifiable,
+                                isSaving: $isSaving
+                            ).environmentObject(self.resource)
                         }
                     }
                 }
@@ -124,10 +110,5 @@ struct PeopleDetail: View {
                 .navigationBarTitle("places")
             }
         }
-    }
-    
-    private func updateAndDismiss(person: Person) {
-        isSaving = false
-        resource.itemsHashed[person.identifier] = person
     }
 }

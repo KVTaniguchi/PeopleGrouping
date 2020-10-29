@@ -40,33 +40,14 @@ struct PeopleDetail: View {
                         modifiable: $modifiable,
                         shouldDisableSave: $shouldDisableSave
                     )
-                    
-                    // Buttons group
-                    Group {
-                        // save section
-                        Section {
-                            SaveButton(
-                                shouldDisableSave: $shouldDisableSave,
-                                modifiable: $modifiable,
-                                isNewPerson: $isNewPerson,
-                                isSaving: $isSaving,
-                                showingAlert: $showingAlert
-                            )
-                            .environmentObject(self.resource)
-                            .alert(isPresented: $showingAlert) {
-                                Alert(title: Text("Not signed in"),
-                                      message: Text("Please sign in to icloud"),
-                                      dismissButton: .default(Text("Ok")))
-                            }
-                        }
-                        // Delete Section
-                        Section {
-                            DeleteButton(
-                                showingAlert: $showingAlert,
-                                modifiable: $modifiable,
-                                isSaving: $isSaving
-                            ).environmentObject(self.resource)
-                        }
+                    Section {
+                        SaveAndDeleteButtonsView(
+                            shouldDisableSave: $shouldDisableSave,
+                            modifiable: $modifiable,
+                            isNewPerson: $isNewPerson,
+                            isSaving: $isSaving,
+                            showingAlert: $showingAlert
+                        )
                     }
                 }
                 .modifier(KeyboardHeightModifier())
@@ -77,33 +58,14 @@ struct PeopleDetail: View {
                         modifiable: $modifiable,
                         shouldDisableSave: $shouldDisableSave
                     )
-                    
-                    // Buttons group
-                    Group {
-                        // save section
-                        Section {
-                            SaveButton(
-                                shouldDisableSave: $shouldDisableSave,
-                                modifiable: $modifiable,
-                                isNewPerson: $isNewPerson,
-                                isSaving: $isSaving,
-                                showingAlert: $showingAlert
-                            )
-                            .environmentObject(self.resource)
-                            .alert(isPresented: $showingAlert) {
-                                Alert(title: Text("Not signed in"),
-                                      message: Text("Please sign in to icloud"),
-                                      dismissButton: .default(Text("Ok")))
-                            }
-                        }
-                        // Delete Section
-                        Section {
-                            DeleteButton(
-                                showingAlert: $showingAlert,
-                                modifiable: $modifiable,
-                                isSaving: $isSaving
-                            ).environmentObject(self.resource)
-                        }
+                    Section {
+                        SaveAndDeleteButtonsView(
+                            shouldDisableSave: $shouldDisableSave,
+                            modifiable: $modifiable,
+                            isNewPerson: $isNewPerson,
+                            isSaving: $isSaving,
+                            showingAlert: $showingAlert
+                        )
                     }
                 }
                 .modifier(KeyboardHeightModifier())
